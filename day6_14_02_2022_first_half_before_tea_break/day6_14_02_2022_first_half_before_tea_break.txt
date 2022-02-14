@@ -1,0 +1,115 @@
+
+   Arrays are used to store group of similar data type data. 
+ We have seen how we can declare and initialise array.
+
+    int num[]={1,2,4,7};
+   
+    Array declaration and initialisation both in the same line.
+In Java Arrays are created during the runtime. 
+
+------------------------------------------------------------------------------------------------
+   int num[]=new int[]{1,2,3,4};
+ So the above line is another way of declaring and initialising array. 
+
+-------------------------------------------------------------------------------------------------
+  We cannot write the below line it will give compilation error.
+
+   int num[]=new int[3]{1,2,3};
+// When we are declaring and initialising in the same line, we don't mention the size of the array.
+// It is dynamically decided depending on the number of elements with which we have initialised the
+array.
+--------------------------------------------------------------------------------------------------
+ We can write
+
+    int num[]=new int[5];
+ In the above case we have declared an int array. But we have not initialised it with values. 
+ So what will be the initial values for each of the elements.
+ans: the default values depending on the datatype of the array. So as in our example , the array
+is of int datatype so the initial values are 0.
+  
+  for(int x : num){
+    System.out.println(x);
+ // It will show
+0
+0
+0
+0
+0
+------------------------------------------------------------------------------------------------
+We have an employee and the employee is having 2 addresses. We need to write the code for the 
+same. We need to accept the user input for id,name and addresses.
+
+Ans: We plan for two classes. One for Employee and another for the main method.
+
+
+    package infosys.demo.arrays;
+
+    public class Employee {
+     private int id;
+     private String name;
+     private String address[];
+     
+     public void setId(int id){
+      this.id=id;
+     }
+
+    public int getId(){
+     return id;
+    }
+    
+    public void setName(String name){
+      this.name=name; 
+    }
+
+    public String getName(){
+      return name;
+     }
+
+    public void setAddress(String address[]){
+      this.address=address;
+    }
+    public String[] getAddress(){
+      return address;
+    }
+  }
+
+  package infosys.demo.arrays;
+ 
+  import java.util.Scanner;
+  public class EmployeeMain {
+    public static void main(String args[]) {
+    Scanner scan=new Scanner(System.in);
+
+    Employee emp=new Employee();  
+
+    String address[]=new String[2];
+
+    System.out.println("Enter the id");
+    emp.setId(scan.nextInt());
+    System.out.println("Enter the name");
+    emp.setName(scan.next()));
+    // for address first we need to create an array of String to store address
+    // pass that array in the setAddress method of Employee class
+    for(int i=0;i<address.length;i++){
+    System.out.println("Enter the address");
+    address[i]=scan.next();
+    }
+    emp.setAddress(address);
+    System.out.println("The details for the employee");
+    System.out.println("ID "+emp.getId());
+    System.out.println("NAME "+emp.getName());
+    address=emp.getAddress();
+    for(String addr : address){
+    System.out.println(addr);
+    } // for each closed
+  }  // main closed
+ } // class closed
+
+--------------------------------------------------------------------------------------------------
+  We have two Employees and each employee is having two addresses.    
+ 
+
+
+    
+
+
